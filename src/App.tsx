@@ -1,15 +1,8 @@
-import { createContext, useState, useEffect } from 'react'
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NewRoom } from "./pages/NewRoom"
-import { auth, firebase } from './services/firebase'
 import { AuthContextProvider } from './contexts/AuthContext'
+import { Room } from './pages/Room';
 
 function App() {
 
@@ -19,7 +12,8 @@ function App() {
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="room/new" element={<NewRoom />}>
+          <Route path="room/new" element={<NewRoom />} />
+          <Route path="rooms/:id" element={<Room />}>
           </Route>
         </Routes>
       </AuthContextProvider>
