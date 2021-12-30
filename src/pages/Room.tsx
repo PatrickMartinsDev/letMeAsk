@@ -32,7 +32,7 @@ export function Room() {
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask" />
-          <RoomCode code={params.id} />
+          <RoomCode code={params.id!} />
         </div>
       </header>
 
